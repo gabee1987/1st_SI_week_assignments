@@ -6,30 +6,44 @@ using System.Threading.Tasks;
 
 namespace CreateClass
 {
-    class Employee : Person
+    class Employee : Person, ICloneable
     {
-        double salary;
-        string profession;
-
         public Employee() : base() { }
 
         public Employee(string name, DateTime birthDate, Genders gender, double salary, string profession)
             : base(name, birthDate, gender)
         {
-            this.salary = salary;
-            this.profession = profession;
+            this.Salary = salary;
+            this.Profession = profession;
         }
 
-        public float Salary { get; set; }
+        public double Salary { get; set; }
 
         public string Profession { get; set; }
 
 
         public override string ToString()
         {
-            return base.ToString() + " " + "Salary: " + this.salary + " " + "Profession: " + this.profession;
+            return base.ToString() + " " + "Salary: " + Salary + " " + "Profession: " + Profession;
         }
 
-        Room room = new Room();
+        public Room Room = new Room();
+
+        
+        
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+        
+        
+        /*
+        public object Clone()
+        {
+            Employee newEmployee = (Employee)this.MemberwiseClone();
+            newEmployee.Room = new Room(Room.RoomNumber);
+            return newEmployee;
+        }
+        */
     }
 }

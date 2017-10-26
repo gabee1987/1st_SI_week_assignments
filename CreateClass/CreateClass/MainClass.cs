@@ -37,6 +37,15 @@ namespace CreateClass
             Console.WriteLine(employee2);
 
 
+            Employee Kovacs = new Employee("Géza", DateTime.Now, Genders.Male, 1000, "léhűtő");
+            Kovacs.Room = new Room(111);
+            Employee Kovacs2 = (Employee)Kovacs.Clone();
+            Kovacs2.Room.RoomNumber = 112;
+            Console.WriteLine(Kovacs.ToString());
+            Console.WriteLine(Kovacs2.ToString());
+            Console.ReadKey();
+
+
             //Set the name of the person
             Console.Write("Enter the name of the person: ");
             person5.Name = Console.ReadLine();

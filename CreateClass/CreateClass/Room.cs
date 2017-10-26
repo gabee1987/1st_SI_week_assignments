@@ -8,6 +8,13 @@ namespace CreateClass
 {
     class Room
     {
-        int RoomNumber;
+        public int RoomNumber { get; set;}
+
+        public Room() { }
+
+        public Room(int number)
+        {
+            this.RoomNumber = number;
+        }
     }
 }

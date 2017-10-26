@@ -10,17 +10,13 @@ namespace CreateClass
 
     class Person
     {
-        private string name;
-        private DateTime birthDate;
-        private Genders gender;
-
         public Person() { }
 
         public Person(string name, DateTime birthDate, Genders gender)
         {
-            this.name = name;
-            this.birthDate = birthDate;
-            this.gender = gender;
+            this.Name = name;
+            this.BirthDate = birthDate;
+            this.Gender = gender;
         }
 
         public string Name { get; set; }
@@ -32,7 +28,7 @@ namespace CreateClass
 
         public override String ToString()
         {
-            return "Name: " + this.name + " " + "BirthDate: " + this.birthDate.ToString("dd/mm/yyyy") + " " + "Gender: " + this.gender;
+            return "Name: " + Name + " " + "BirthDate: " + BirthDate.ToString("MM/dd/yyyy") + " " + "Gender: " + Gender;
         }
 
         
